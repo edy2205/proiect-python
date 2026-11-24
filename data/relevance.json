@@ -1,0 +1,115 @@
+{
+  "mismatch_distance": 0.1,
+  "groups": {
+    "red_01.png": "red",
+    "red_02.png": "red",
+    "red_03.png": "red",
+    "red_04.png": "red",
+    "red_05.png": "red",
+    "red_06.png": "red",
+    "blue_01.png": "blue",
+    "blue_02.png": "blue",
+    "blue_03.png": "blue",
+    "blue_04.png": "blue",
+    "blue_05.png": "blue",
+    "blue_06.png": "blue",
+    "green_01.png": "green",
+    "green_02.png": "green",
+    "green_03.png": "green",
+    "green_04.png": "green",
+    "green_05.png": "green",
+    "green_06.png": "green",
+    "yellow_01.png": "yellow",
+    "yellow_02.png": "yellow",
+    "yellow_03.png": "yellow",
+    "yellow_04.png": "yellow",
+    "yellow_05.png": "yellow",
+    "yellow_06.png": "yellow",
+    "purple_01.png": "purple",
+    "purple_02.png": "purple",
+    "purple_03.png": "purple",
+    "purple_04.png": "purple",
+    "purple_05.png": "purple",
+    "purple_06.png": "purple",
+    "gray_01.png": "gray",
+    "gray_02.png": "gray",
+    "gray_03.png": "gray",
+    "gray_04.png": "gray",
+    "gray_05.png": "gray",
+    "gray_06.png": "gray",
+    "sunset_01.png": "sunset",
+    "ocean_01.png": "ocean",
+    "sunset_02.png": "sunset",
+    "ocean_02.png": "ocean",
+    "sunset_03.png": "sunset",
+    "ocean_03.png": "ocean",
+    "sunset_04.png": "sunset",
+    "ocean_04.png": "ocean",
+    "sunset_05.png": "sunset",
+    "ocean_05.png": "ocean",
+    "sunset_06.png": "sunset",
+    "ocean_06.png": "ocean",
+    "fruit_01.png": "fruit",
+    "sign_01.png": "sign",
+    "fruit_02.png": "fruit",
+    "sign_02.png": "sign",
+    "blocks_a_01.png": "layout_a",
+    "blocks_a_02.png": "layout_a",
+    "blocks_b_01.png": "layout_b",
+    "blocks_b_02.png": "layout_b",
+    "uniform_red.png": "uniform_red",
+    "uniform_blue.png": "uniform_blue"
+  },
+  "queries": [
+    {
+      "query": "red_01.png",
+      "group": "red",
+      "notes": ""
+    },
+    {
+      "query": "blue_01.png",
+      "group": "blue",
+      "notes": ""
+    },
+    {
+      "query": "green_01.png",
+      "group": "green",
+      "notes": ""
+    },
+    {
+      "query": "yellow_01.png",
+      "group": "yellow",
+      "notes": ""
+    },
+    {
+      "query": "purple_01.png",
+      "group": "purple",
+      "notes": ""
+    },
+    {
+      "query": "gray_01.png",
+      "group": "gray",
+      "notes": ""
+    },
+    {
+      "query": "sunset_01.png",
+      "group": "sunset",
+      "notes": "gradient portocaliu-violet"
+    },
+    {
+      "query": "ocean_01.png",
+      "group": "ocean",
+      "notes": "gradient albastru-verde"
+    },
+    {
+      "query": "fruit_01.png",
+      "group": "fruit",
+      "notes": "culoare nepotrivită semantic: cerc roșu (fruct) vs. octogon roșu (semn)"
+    },
+    {
+      "query": "blocks_a_01.png",
+      "group": "layout_a",
+      "notes": "limitare: blocuri colorate permutate au aceeași histogramă"
+    }
+  ]
+}
