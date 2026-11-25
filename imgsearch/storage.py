@@ -1,5 +1,3 @@
-"""Stocare SQLite: salvarea și reîncărcarea indexului (fără server)."""
-
 from __future__ import annotations
 
 import json
@@ -56,8 +54,6 @@ def _now() -> str:
 
 
 class Storage:
-    """Acces la baza SQLite a indexului."""
-
     def __init__(self, db_path: str | Path) -> None:
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -69,7 +65,6 @@ class Storage:
 
     @classmethod
     def open_existing(cls, db_path: str | Path) -> "Storage":
-        """Deschide un index existent; aruncă IndexNotFoundError dacă lipsește."""
         if not Path(db_path).is_file():
             raise IndexNotFoundError(f"Indexul nu există: {db_path}")
         return cls(db_path)
@@ -83,7 +78,6 @@ class Storage:
     def __exit__(self, *exc: object) -> None:
         self.close()
 
-    # ------------------------------------------------------------ images
     @staticmethod
     def _to_record(row: sqlite3.Row) -> ImageRecord:
         return ImageRecord(
@@ -161,7 +155,6 @@ class Storage:
         self.save_features(image_id, bins, vector, config)
 
     def load_features(self, bins: int) -> tuple[np.ndarray, np.ndarray]:
-        """Întoarce (ids, matrice) pentru toate imaginile cu `bins` intervale."""
         bins = validate_bins(bins)
         rows = self._conn.execute(
             "SELECT image_id, vector FROM features WHERE bins = ? ORDER BY image_id", (bins,)
@@ -176,9 +169,7 @@ class Storage:
         rows = self._conn.execute("SELECT DISTINCT bins FROM features ORDER BY bins").fetchall()
         return [int(r[0]) for r in rows]
 
-    # ------------------------------------------------------- eval / log
     def replace_eval_queries(self, queries: list[tuple[int, str, str]]) -> None:
-        """Înlocuiește interogările de evaluare: (image_id, relevance_group, notes)."""
         self._conn.execute("DELETE FROM eval_queries")
         self._conn.executemany(
             "INSERT INTO eval_queries (image_id, relevance_group, notes) VALUES (?, ?, ?)", queries
@@ -198,7 +189,6 @@ class Storage:
         )
         self._conn.commit()
 
-    # -------------------------------------------------------------- meta
     def set_meta(self, key: str, value: str) -> None:
         self._conn.execute("INSERT OR REPLACE INTO meta (key, value) VALUES (?, ?)", (key, value))
         self._conn.commit()

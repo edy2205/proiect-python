@@ -1,5 +1,3 @@
-"""Excepții specifice aplicației Image Search 60A."""
-
 from __future__ import annotations
 
 
